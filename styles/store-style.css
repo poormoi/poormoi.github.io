@@ -1,0 +1,80 @@
+/* CODED BY RIDLEY */
+html {
+
+}
+body {
+  margin: 10;
+  background-color: #d34;
+}
+div.header {
+  width: 23vw;
+  border-style:dotted;
+  border-width:2px;
+  border-color:#ff0;
+  margin: auto;
+  text-align: center;
+}
+div.nav {
+  width: 30vw;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+div.item {
+  position: relative;
+  left: 50%;
+  float: left;
+  background: #dda;
+  width: 25vw;
+  border-style: outset;
+  margin: 0.5vw;
+}
+div.store {
+  float: right;
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+a.nav {
+  color:#840d35;
+}
+a.nav:hover {
+  color:#fff;
+}
+a.nav:visited {
+  color:#840d35;
+}
+a.nav:visited:hover {
+  color:#fff;
+}
+img.item-image {
+  border-style: solid;
+  border-width: 1px;
+  margin: auto;
+  margin-top: 1vw;
+  max-width: 90%;
+}
+h1 {
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 36pt;
+  margin: 4px;
+  color: #a14;
+}
+h2 {
+  font-style: italic;
+  font-size: 18pt;
+  margin: 6pt;
+}
+h3 {
+  font-family: Helvetica;
+  font-size: 12pt;
+  margin: 6pt;
+}
+#paypal {
+  margin-left: 2pt;
+  margin-bottom: 6pt;
+}
+#title {
+  font-size: 4vw;
+}

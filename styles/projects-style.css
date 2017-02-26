@@ -1,0 +1,47 @@
+/* CODED BY RIDLEY */
+body {
+  background:linear-gradient(#1dd,#fab);
+  margin:5px;
+}
+h1 {
+  font-family:Garamond;
+  font-size:24pt;
+  font-style:oblique;
+  color:#fff;
+  text-shadow:2px 3px 5px #000;
+  margin:10px;
+}
+li {
+  font-family:Arial;
+  font-size:12pt;
+}
+div#list {
+  box-shadow:5px 3px 10px;
+  padding:5px;
+}
+a.list {
+  opacity: 1;
+  color: #000;
+}
+a.list:hover {
+  font-style:oblique;
+  color:#f00;
+}
+/* CAN'T GET THE VISITED LINK STYLE TO WORK. ANY IDEAS? */
+a.list:visited {
+
+}
+div.nav {
+  float:right;
+  margin: 10 0;
+}
+a.nav {
+  color:#000;
+  background:#fff;
+  padding:2px;
+}
+a.nav:hover {
+  font-style:normal;
+  background:#f00;
+  color:#fff;
+}
