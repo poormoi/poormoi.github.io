@@ -17,7 +17,6 @@ div.header {
 div#wrapper {
   min-height: 100%;
   height: auto;
-
 }
 
 div#bottom {
@@ -31,6 +30,7 @@ img#avatar {
 
 img#title {
   margin-top:30px;
+  max-width:30vw;
 }
 
 img#reef {

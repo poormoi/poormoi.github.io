@@ -11,6 +11,12 @@ body {
 p {
 
 }
+header {
+  font-size: 48pt;
+  font-family: fantasy;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 h1 {
   font-size: 16pt;
   text-decoration:underline;
@@ -43,7 +49,7 @@ div#header {
   text-align: center;
 }
 div#contact {
-  line-height:20%;
+  margin:-10px;
 }
 div#cv {
   position: relative;
