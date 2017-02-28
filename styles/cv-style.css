@@ -9,16 +9,14 @@ body {
   margin: 0 auto;
 }
 p {
-
+  font-size:10pt;
 }
 header {
-  font-size: 48pt;
-  font-family: fantasy;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 36pt;
+  margin: 10px;
 }
 h1 {
-  font-size: 16pt;
+  font-size: 12pt;
   text-decoration:underline;
 }
 a {
@@ -37,13 +35,14 @@ div.whole {
 }
 div.nav {
   padding: 10px;
+  font-size: 11pt;
 }
 div#header {
   position: fixed;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-height: 400px;
+  height: 27vh;
   background-color: #fff;
   z-index: 2;
   text-align: center;
@@ -54,7 +53,7 @@ div#contact {
 div#cv {
   position: relative;
   width: 100%;
-  margin-top: 250px;
+  margin-top: 27vh;
   float: left;
   text-align: center;
 }
