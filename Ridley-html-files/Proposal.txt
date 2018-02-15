@@ -1,0 +1,21 @@
+Ridley Tankersley
+IHRTLUHC
+
+	My plan is to create a free, open source, shareable multimedia art space using the Internet’s format. Using the basic spacial premise of NewHive, I will build a downloadable (non-server hosted) website from scratch using various coding. Like walking from piece to piece in a gallery, users will navigate between webpages and experience various installations. I may learn to code small games, a user drawing space, slideshows, a webcam, and a user code editing space.
+	The philosophy behind this project is focus don getting away from common conceptions of art. Art is sometimes seen as larger than life and, although there is plenty of art being made that makes fun of or explicitly goes after this idea, much importance is still placed on art pieces as final things. This website is a response to these conceptions and a way of combatting the norm. Anyone can download this, free of cost. Anyone can edit it (there will be instructions on how to edit the code), anyone can make this! I am not special!
+
+Timeline:
+
+April 18 - 10 pages are finished
+April 25 - 15 pages are finished
+May 2 - website finished, installation materials acquired
+May 4 - distribution materials acquired
+May 6 - install day, ready to show and viewer information and handout files are ready
+
+Modes of inspiration:
+
+Ryder Ripps - ryder-ripps.com
+arcane kids - arcanekids.com
+Newhive (spacial inspiration) - newhive.com
+Cory Arcangel - www.coryarcangel.com
+Michael Manning (specifically his coding) - floatingform.com

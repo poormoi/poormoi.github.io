@@ -1,0 +1,78 @@
+python notes
+
+variables = numerical
+boolean = T/F
+
+you can redefine variables - even in terms of itself
+
+comments = #
+
+four spaces in front of sub-lines
+
+division = /
+exponentiation = **
+
+
+string = “can contain letters, numbers, and symbols”
+
+\ = escapes apostrophes
+
+Each character in a string is assigned a number. This number is called the index
+
+String methods:
+	len() gets the length of a string - print len(parrot)
+	lower() gets rid of all capitalization - print “Ryan".lower()
+	upper() makes all caps - print “Ryan”.upper()
+	str() turns non-strings into strings - str(2) would = “2”
+
+Methods that use dot notation only work with strings. On the other hand, len() and str() can work on other data types.
+
+concatenation = combining strings
+
+%s is a variable that corresponds to a defined string - print “I love %s” % (string_1)
+
+datetime - from datetime import datetime
+		now = datetime.now()
+		print now.month
+
+Control flow:
+
+comparators:
+	Equal to (==)
+	Not equal to (!=)
+	Less than (<)
+	Less than or equal to (<=)
+	Greater than (>)
+	Greater than or equal to (>=)
+
+
+
+pyg = 'ay'
+print 'Welcome to the English to Spanish translator; coded by Ridley Tankersley!'
+print 'Enter a word below to begin.'
+original = raw_input('>')
+
+word = original.lower()
+
+if len(original) > 0 and original.isalpha():
+    answer = raw_input('OK... shall I translate that for you? (Y/N)')
+    if answer==Y:
+        print 'OK...'
+    elif answer==N:
+        print 'OK, well I\'m going to!'
+    else:
+        print 'What was that?'
+else:
+    print 'Sorry, that\'s not a word!'
+    print 'Enter a word below to begin.'
+    original = raw_input('>')
+    word = original.lower()
+
+first = word[0]
+
+new_word = word + first + pyg
+new_word = new_word[1:len(new_word)]
+
+print "OK... I couldn't quite get that to Spanish. Sorry! Here it is in Pig Latin:"
+print new_word
+print "Again, super sorry!!"
