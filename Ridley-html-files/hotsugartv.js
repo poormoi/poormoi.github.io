@@ -25,7 +25,7 @@ var finalThreshold = new THREE.Vector3( 150, 184, 322 );
 
 
 function distance (v1, v2) {
-	
+
     var dx = v1.x - v2.x,
     	dy = v1.y - v2.y,
     	dz = v1.z - v2.z;
@@ -59,16 +59,16 @@ var loader = new THREE.JSONLoader(),
 		c, c_materials, w, w_materials, mesh1, sound1,sound2,sound3, cube1,cube2,cube3;
 
 
-var ambient = document.getElementById('ambient'); // ambient music that plays throughought 
+var ambient = document.getElementById('ambient'); // ambient music that plays throughought
 ambient.addEventListener('ended', function () {
 	this.currentTime = 0;
 	this.volume = 0.3;
-	
+
 	this.play();
 }, false);
 console.log(ambient);
 
-var finalSound = document.getElementById('final'); 
+var finalSound = document.getElementById('final');
 
 function getCameraVector(objYRotation, distance) {
 
@@ -130,22 +130,22 @@ camera = addCamera(scene, listener);
 light = addLights(scene);
 addLandscape(scene, Physijs, loader, listener);
 var firstSky = addSkybox(scene);
-	
+
 
 loader.load( "models/test/test.json", function( diamond, islands_material ) {
-	
+
 	diamondMesh = diamond;
 
-});		
+});
 
 // addVehicle(scene, Physijs, loader, input, vehicle);
 
 loader.load( "models/gtolava/gtolava.js", function( car, car_materials ) {
 	loader.load( "models/mustang/mustang_wheel.js", function( wheel, wheel_materials ) {
-		
+
 		c = car;
 		c_materials = car_materials;
-		w = wheel; 
+		w = wheel;
 		w_materials = wheel_materials;
 
 		createCar(car, car_materials, wheel, wheel_materials);
@@ -166,7 +166,7 @@ loader.load( "models/boy/newboy.js", function( obj, materials ) {
 //temporary fairy
 var geometry = new THREE.BoxGeometry( 2, 2, 2 );
 var material = new THREE.MeshBasicMaterial( {color: 0xff0000} );
-var  fairyY = 170, 
+var  fairyY = 170,
 	fairy;
 
 loader.load( "models/elf/elf.js", function( obj, materials ) {
@@ -208,7 +208,7 @@ function createCar(car, car_materials, wheel, wheel_materials) {
 	));
 
 	scene.add( vehicle );
-	
+
 	var wheel_material = new THREE.MeshFaceMaterial( wheel_materials );
 
 	for ( var i = 0; i < 4; i++ ) {
@@ -341,13 +341,13 @@ function createCar(car, car_materials, wheel, wheel_materials) {
 }
 
 function randomDiamonds(diamond) {
-	
+
 	var box_material = Physijs.createMaterial(
 		new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xbbbbbb, ambient: 0x000000, shininess: 10, shading: THREE.SmoothShading, opacity: 0.8, transparent: true } ),
 		.4, // low friction
 		.6 // high restitution
-	);	
-	
+	);
+
 	for ( var i = 0; i < 15; i++ ) {
 		var size = Math.random() * 2 + .5;
 		var mesh = new Physijs.ConvexMesh(
@@ -410,14 +410,14 @@ function addText() {
 	var canvas1 = document.createElement('canvas');
 	var context1 = canvas1.getContext('2d');
 	context1.font = "Bold 150px chopin";
-	context1.textAlign="center"; 
+	context1.textAlign="center";
 	context1.fillStyle = "rgba(0,0,0,0.95)";
 	context1.fillText(daysUntil(2015, 2, 24), 150, 100);
 
 	// canvas contents will be used for a texture
-	var texture1 = new THREE.Texture(canvas1) 
+	var texture1 = new THREE.Texture(canvas1)
 	texture1.needsUpdate = true;
-	  
+
 	var material1 = new THREE.MeshBasicMaterial( {map: texture1, side:THREE.DoubleSide } );
 	material1.transparent = true;
 
@@ -437,15 +437,15 @@ var aoeu = false;
 
 render = function() {
 	requestAnimationFrame( render );
-	
+
 	renderCounter += .02;
 
 	if ( !boySwitch ) {
 		if (!finalSwitch) {
 			if (fairy) {
-				fairy.position.y = fairyY + (Math.sin(renderCounter) * 3);	
+				fairy.position.y = fairyY + (Math.sin(renderCounter) * 3);
 			}
-			
+
 			if ( vehicle ) {
 
 				light.target.position.copy( vehicle.mesh.position );
@@ -462,13 +462,13 @@ render = function() {
 					sound1.setRefDistance(0);
 					sound2.setRefDistance(0);
 					sound3.setRefDistance(0);
-					
+
 					ambient.pause();
 					setTimeout(function () {
 						finalSound.play();
 					},1500);
-					
-					
+
+
 					reload.className = reload.className + ' remove';
 
 					setTimeout(function () {
@@ -508,15 +508,15 @@ render = function() {
 							document.getElementById('death').play();
 							setTimeout(function () {
 								fireball.setFire(false);
-							}, 2000);						
+							}, 2000);
 						}
 
 					}, 6000);
 				}
 				if (!splash){
-					mesh1.rotation.y = mesh1.rotation.y + 0.01;				
+					mesh1.rotation.y = mesh1.rotation.y + 0.01;
 				}
-				
+
 				renderer.render( scene, camera );
 
 			}
@@ -15469,7 +15469,7 @@ THREE.Ray.prototype = {
 			// in order to always return an intersect point that is in front of the ray.
 			if ( t0 < 0 ) return this.at( t1, optionalTarget );
 
-			// else t0 is in front of the ray, so return the first collision point scaled by t0 
+			// else t0 is in front of the ray, so return the first collision point scaled by t0
 			return this.at( t0, optionalTarget );
 
 		}
@@ -19281,7 +19281,7 @@ THREE.Geometry.prototype = {
 			}
 
 		}
-		
+
 		this.computeFaceNormals();
 
 		if ( geometry.boundingBox !== null ) {
@@ -20491,7 +20491,7 @@ THREE.Light = function ( color ) {
 	THREE.Object3D.call( this );
 
 	this.type = 'Light';
-	
+
 	this.color = new THREE.Color( color );
 
 };
@@ -22243,7 +22243,7 @@ THREE.MaterialLoader.prototype = {
 		if ( json.shininess !== undefined ) material.shininess = json.shininess;
 		if ( json.uniforms !== undefined ) material.uniforms = json.uniforms;
 		if ( json.vertexShader !== undefined ) material.vertexShader = json.vertexShader;
-		if ( json.fragmentShader !== undefined ) material.fragmentShader = json.fragmentShader;		
+		if ( json.fragmentShader !== undefined ) material.fragmentShader = json.fragmentShader;
 		if ( json.vertexColors !== undefined ) material.vertexColors = json.vertexColors;
 		if ( json.shading !== undefined ) material.shading = json.shading;
 		if ( json.blending !== undefined ) material.blending = json.blending;
@@ -23692,7 +23692,7 @@ THREE.MeshFaceMaterial = function ( materials ) {
 	this.uuid = THREE.Math.generateUUID();
 
 	this.type = 'MeshFaceMaterial';
-	
+
 	this.materials = materials instanceof Array ? materials : [];
 
 };
@@ -24562,7 +24562,7 @@ THREE.Mesh = function ( geometry, material ) {
 	THREE.Object3D.call( this );
 
 	this.type = 'Mesh';
-	
+
 	this.geometry = geometry !== undefined ? geometry : new THREE.Geometry();
 	this.material = material !== undefined ? material : new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff } );
 
@@ -25051,7 +25051,7 @@ THREE.Skeleton.prototype.pose = function () {
 THREE.Skeleton.prototype.update = ( function () {
 
 	var offsetMatrix = new THREE.Matrix4();
-	
+
 	return function () {
 
 		// flatten bone matrices to array
@@ -25072,7 +25072,7 @@ THREE.Skeleton.prototype.update = ( function () {
 			this.boneTexture.needsUpdate = true;
 
 		}
-		
+
 	};
 
 } )();
@@ -26994,7 +26994,7 @@ THREE.ShaderLib = {
 			"		#endif",
 
 			"	}",
-			
+
 			THREE.ShaderChunk[ "alphatest_fragment" ],
 
 			"	if( enableSpecular )",
@@ -27876,7 +27876,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 				}
 
 			}
-			
+
 			return array;
 
 		};
@@ -28251,7 +28251,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 	// Buffer deallocation
 
 	var deleteBuffers = function ( geometry ) {
-	
+
 		var buffers = [
 			'__webglVertexBuffer',
 			'__webglNormalBuffer',
@@ -28259,13 +28259,13 @@ THREE.WebGLRenderer = function ( parameters ) {
 			'__webglColorBuffer',
 			'__webglUVBuffer',
 			'__webglUV2Buffer',
-			
+
 			'__webglSkinIndicesBuffer',
 			'__webglSkinWeightsBuffer',
-			
+
 			'__webglFaceBuffer',
 			'__webglLineBuffer',
-			
+
 			'__webglLineDistanceBuffer'
 		];
 
@@ -28308,7 +28308,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 		if ( geometry instanceof THREE.BufferGeometry ) {
 
 			for ( var name in geometry.attributes ) {
-			
+
 				var attribute = geometry.attributes[ name ];
 
 				if ( attribute.buffer !== undefined ) {
@@ -31400,7 +31400,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 					numMorphTargets: numMorphTargets,
 					numMorphNormals: numMorphNormals
 				};
-				
+
 				groups[ groupHash ] = group;
 				groupsList.push( group );
 
@@ -31421,7 +31421,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 						numMorphTargets: numMorphTargets,
 						numMorphNormals: numMorphNormals
 					};
-					
+
 					groups[ groupHash ] = group;
 					groupsList.push( group );
 
@@ -33983,7 +33983,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 	}
 
 	// DEPRECATED
-	
+
 	this.initMaterial = function () {
 
 		console.warn( 'THREE.WebGLRenderer: .initMaterial() has been removed.' );
@@ -34130,7 +34130,7 @@ THREE.WebGLExtensions = function ( gl ) {
 		var extension;
 
 		switch ( name ) {
-		
+
 			case 'OES_texture_float':
 				extension = gl.getExtension( 'OES_texture_float' );
 				break;
@@ -34585,7 +34585,7 @@ THREE.WebGLShader = ( function () {
 
 	return function ( gl, type, string ) {
 
-		var shader = gl.createShader( type ); 
+		var shader = gl.createShader( type );
 
 		gl.shaderSource( shader, string );
 		gl.compileShader( shader );
@@ -34937,7 +34937,7 @@ THREE.LensFlarePlugin = function ( renderer, flares ) {
 			// calc object screen position
 
 			var flare = flares[ i ];
-			
+
 			tempPosition.set( flare.matrixWorld.elements[12], flare.matrixWorld.elements[13], flare.matrixWorld.elements[14] );
 
 			tempPosition.applyMatrix4( camera.matrixWorldInverse );
@@ -35103,7 +35103,7 @@ THREE.ShadowMapPlugin = function ( _renderer, _lights, _webglObjects, _webglObje
 	_max = new THREE.Vector3(),
 
 	_matrixPosition = new THREE.Vector3(),
-	
+
 	_renderList = [];
 
 	// init
@@ -35624,7 +35624,7 @@ THREE.SpritePlugin = function ( renderer, sprites ) {
 	var program, attributes, uniforms;
 
 	var texture;
-	
+
 	var init = function () {
 
 		var vertices = new Float32Array( [
@@ -35849,7 +35849,7 @@ THREE.SpritePlugin = function ( renderer, sprites ) {
 		// restore gl
 
 		gl.enable( gl.CULL_FACE );
-		
+
 		renderer.resetGLState();
 
 	};
@@ -36519,7 +36519,7 @@ THREE.FontUtils = {
 
 THREE.FontUtils.generateShapes = function ( text, parameters ) {
 
-	// Parameters 
+	// Parameters
 
 	parameters = parameters || {};
 
@@ -37240,7 +37240,7 @@ THREE.CurvePath = function () {
 
 	this.curves = [];
 	this.bends = [];
-	
+
 	this.autoClose = false; // Automatically closes the path
 };
 
@@ -37264,11 +37264,11 @@ THREE.CurvePath.prototype.closePath = function() {
 	// Add a line curve if start and end of lines are not connected
 	var startPoint = this.curves[0].getPoint(0);
 	var endPoint = this.curves[this.curves.length-1].getPoint(1);
-	
+
 	if (! startPoint.equals(endPoint)) {
 		this.curves.push( new THREE.LineCurve(endPoint, startPoint) );
 	}
-	
+
 };
 
 // To get accurate point with reference to
@@ -37616,7 +37616,7 @@ THREE.Gyroscope.prototype.updateMatrixWorld = ( function () {
 		}
 
 	};
-	
+
 }() );
 
 // File:src/extras/core/Path.js
@@ -37998,7 +37998,7 @@ THREE.Path.prototype.getPoints = function( divisions, closedPath ) {
 			//console.log(points);
 
 		  break;
-		  
+
 		case THREE.PathActions.ELLIPSE:
 
 			var aX = args[ 0 ], aY = args[ 1 ],
@@ -38201,7 +38201,7 @@ THREE.Path.prototype.toShapes = function( isCCW, noHoles ) {
 	holesFirst = isCCW ? ! holesFirst : holesFirst;
 
 	// console.log("Holes first", holesFirst);
-	
+
 	var betterShapeHoles = [];
 	var newShapes = [];
 	var newShapeHoles = [];
@@ -38227,7 +38227,7 @@ THREE.Path.prototype.toShapes = function( isCCW, noHoles ) {
 			newShapes[mainIdx] = { s: new THREE.Shape(), p: tmpPoints };
 			newShapes[mainIdx].s.actions = tmpPath.actions;
 			newShapes[mainIdx].s.curves = tmpPath.curves;
-			
+
 			if ( holesFirst )	mainIdx ++;
 			newShapeHoles[mainIdx] = [];
 
@@ -39078,7 +39078,7 @@ THREE.EllipseCurve.prototype.getPoint = function ( t ) {
 		angle = this.aStartAngle + t * deltaAngle;
 
 	}
-	
+
 	var vector = new THREE.Vector2();
 
 	vector.x = this.aX + this.xRadius * Math.cos( angle );
@@ -39768,7 +39768,7 @@ THREE.Animation.prototype.update = (function(){
 						// blend
 
 						var vector = object.position;
-						
+
 						vector.x = vector.x + ( currentPoint[ 0 ] - vector.x ) * proportionalWeight;
 						vector.y = vector.y + ( currentPoint[ 1 ] - vector.y ) * proportionalWeight;
 						vector.z = vector.z + ( currentPoint[ 2 ] - vector.z ) * proportionalWeight;
@@ -40014,7 +40014,7 @@ THREE.KeyFrameAnimation.prototype.stop = function() {
 	// reset JIT matrix and remove cache
 
 	for ( var h = 0; h < this.data.hierarchy.length; h ++ ) {
-		
+
 		var obj = this.hierarchy[ h ];
 		var node = this.data.hierarchy[ h ];
 
@@ -40788,14 +40788,14 @@ THREE.ExtrudeGeometry.prototype.addShape = function ( shape, options ) {
 	function getBevelVec( inPt, inPrev, inNext ) {
 
 		var EPSILON = 0.0000000001;
-		
+
 		// computes for inPt the corresponding point inPt' on a new contour
 		//   shiftet by 1 unit (length of normalized vector) to the left
 		// if we walk along contour clockwise, this new contour is outside the old one
 		//
 		// inPt' is the intersection of the two lines parallel to the two
 		//  adjacent edges of inPt at a distance of 1 unit on the left side.
-		
+
 		var v_trans_x, v_trans_y, shrink_by = 1;		// resulting translation vector for inPt
 
 		// good reading for geometry algorithms (here: line-line intersection)
@@ -40803,38 +40803,38 @@ THREE.ExtrudeGeometry.prototype.addShape = function ( shape, options ) {
 
 		var v_prev_x = inPt.x - inPrev.x, v_prev_y = inPt.y - inPrev.y;
 		var v_next_x = inNext.x - inPt.x, v_next_y = inNext.y - inPt.y;
-		
+
 		var v_prev_lensq = ( v_prev_x * v_prev_x + v_prev_y * v_prev_y );
-		
+
 		// check for colinear edges
 		var colinear0 = ( v_prev_x * v_next_y - v_prev_y * v_next_x );
-		
+
 		if ( Math.abs( colinear0 ) > EPSILON ) {		// not colinear
-			
+
 			// length of vectors for normalizing
-	
+
 			var v_prev_len = Math.sqrt( v_prev_lensq );
 			var v_next_len = Math.sqrt( v_next_x * v_next_x + v_next_y * v_next_y );
-			
+
 			// shift adjacent points by unit vectors to the left
-	
+
 			var ptPrevShift_x = ( inPrev.x - v_prev_y / v_prev_len );
 			var ptPrevShift_y = ( inPrev.y + v_prev_x / v_prev_len );
-			
+
 			var ptNextShift_x = ( inNext.x - v_next_y / v_next_len );
 			var ptNextShift_y = ( inNext.y + v_next_x / v_next_len );
-	
+
 			// scaling factor for v_prev to intersection point
-	
+
 			var sf = (  ( ptNextShift_x - ptPrevShift_x ) * v_next_y -
 						( ptNextShift_y - ptPrevShift_y ) * v_next_x    ) /
 					  ( v_prev_x * v_next_y - v_prev_y * v_next_x );
-	
+
 			// vector from inPt to intersection point
-	
+
 			v_trans_x = ( ptPrevShift_x + v_prev_x * sf - inPt.x );
 			v_trans_y = ( ptPrevShift_y + v_prev_y * sf - inPt.y );
-	
+
 			// Don't normalize!, otherwise sharp corners become ugly
 			//  but prevent crazy spikes
 			var v_trans_lensq = ( v_trans_x * v_trans_x + v_trans_y * v_trans_y )
@@ -40843,7 +40843,7 @@ THREE.ExtrudeGeometry.prototype.addShape = function ( shape, options ) {
 			} else {
 				shrink_by = Math.sqrt( v_trans_lensq / 2 );
 			}
-			
+
 		} else {		// handle special case of colinear edges
 
 			var direction_eq = false;		// assumes: opposite
@@ -41411,7 +41411,7 @@ THREE.ShapeGeometry.prototype.addShape = function ( shape, options ) {
  * @author bhouston / http://exocortex.com
  */
 
-// points - to create a closed torus, one must use a set of points 
+// points - to create a closed torus, one must use a set of points
 //    like so: [ a, b, c, d, a ], see first is the same as last.
 // segments - the number of circumference segments to create
 // phiStart - the starting radian
@@ -41741,7 +41741,7 @@ THREE.SphereGeometry = function ( radius, widthSegments, heightSegments, phiStar
 		phiStart: phiStart,
 		phiLength: phiLength,
 		thetaStart: thetaStart,
-		thetaLength: thetaLength 
+		thetaLength: thetaLength
 	};
 
 	radius = radius || 50;
@@ -42012,7 +42012,7 @@ THREE.TorusKnotGeometry = function ( radius, tube, radialSegments, tubularSegmen
 	p = p || 2;
 	q = q || 3;
 	heightScale = heightScale || 1;
-	
+
 	var grid = new Array( radialSegments );
 	var tang = new THREE.Vector3();
 	var n = new THREE.Vector3();
@@ -43252,7 +43252,7 @@ THREE.CameraHelper.prototype = Object.create( THREE.Line.prototype );
 THREE.CameraHelper.prototype.update = function () {
 
 	var geometry, pointMap;
-	
+
 	var vector = new THREE.Vector3();
 	var camera = new THREE.Camera();
 
@@ -44642,14 +44642,14 @@ var THREE = require('three');
 
 
 
-module.exports = function (scene, listener) {		
+module.exports = function (scene, listener) {
 	var camera = new THREE.PerspectiveCamera(
 		50,
 		window.innerWidth / window.innerHeight,
 		1,
 		2000
 	);
-	
+
 	camera.add( listener );
 	// scene.add( camera );
 
@@ -44779,7 +44779,7 @@ function init() {
     scene = new THREE.Scene();
     sceneCube = new THREE.Scene();
     projector = new THREE.Projector();
-		    
+
     var hemiLight1 = new THREE.HemisphereLight( 0xffffff, 0xffffff, 1 );
 
     hemiLight1.color.setHSL( 0.6, 1, 0.6 );
@@ -44858,9 +44858,9 @@ function init() {
 	    // create a new material
 
 	    // this is the same as the other objects
-	    
-	    
-		
+
+
+
 		var material = new THREE.MeshLambertMaterial( { color: 0xff0000, ambient: 0xffffff, envMap: skyMaterials[3], refractionRatio: 0.95 } );
 		var material = new THREE.MeshBasicMaterial( { color: 0x666666, envMap: skyMaterials[0], refractionRatio: 0.99 } );
 		var material = new THREE.MeshPhongMaterial( { ambient: 0x030303, color: 0xdddddd, specular: 0xff0000, shininess: 50, shading: THREE.FlatShading } )
@@ -44881,7 +44881,7 @@ function init() {
 
 
 	// addSkybox(scene);
-	
+
     // on window resize
 	// window.addEventListener( 'resize', onWindowResize, false );
 
@@ -44910,7 +44910,7 @@ function onDocumentMouseMove(event) {
 }
 
 function createSkybox() {
-	var mesh, shader, material, textureCube; 
+	var mesh, shader, material, textureCube;
 	textureCube = THREE.ImageUtils.loadTextureCube( getSkyboxImageArray(skyboxDirectories[3]), new THREE.CubeRefractionMapping());
 	shader = THREE.ShaderLib.cube;
 	shader.uniforms.tCube.value = textureCube;
@@ -44960,9 +44960,9 @@ module.exports = render = function (renderer) {
 		    cameraCube.rotation.copy( camera.rotation );
 
 		    renderer.render( sceneCube, cameraCube );
-		    renderer.render( scene, camera );				
+		    renderer.render( scene, camera );
 		}
-	
+
 	};
 
 };
@@ -44993,14 +44993,14 @@ var onWindowResize = require('./events/onWindowResize');
 var light2 = new THREE.AmbientLight(0x444444);
 scene.add(light2);
 var light3 = new THREE.AmbientLight(0x444444);
-scene.add(light3);	
+scene.add(light3);
 
 
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 var smokeParticles = new THREE.Geometry;
 
-var smokeTexture = THREE.ImageUtils.loadTexture('Images/4.png');
+var smokeTexture = THREE.ImageUtils.loadTexture('images/4.png');
 var smokeMaterial = new THREE.ParticleBasicMaterial({ map: smokeTexture, transparent: true, blending: THREE.AdditiveBlending, size: 5, color: 0x111111 });
 
 for (var i = 0; i < 300; i++) {
@@ -45030,14 +45030,14 @@ module.exports = {
 			while (particleCount--) {
 			    var particle = smokeParticles.vertices[particleCount];
 			    particle.z += delta * 50;
-			    
+
 			    if (particle.z >= 50 && fire ) {
 			        particle.y = Math.random() * 12;
 			        particle.x = Math.random() * 12;
 			        particle.z = Math.random() * 12;
 			    }
 			}
-			smokeParticles.__dirtyVertices = true;	
+			smokeParticles.__dirtyVertices = true;
 			renderer.render(scene, camera);
 		};
 
@@ -45114,7 +45114,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// ISLAND 1
 	loader.load( "models/islands/islands01.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45128,7 +45128,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// ISLAND 2
 	loader.load( "models/islands/islands02.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45142,7 +45142,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// BRIDGE 1
 	loader.load( "models/islands/islands03.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45169,7 +45169,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// BRIDGE 2
 	loader.load( "models/islands/islands05.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45182,7 +45182,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// CASTLE
 	loader.load( "models/islands/islands06.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			satin_material,
@@ -45195,7 +45195,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// CASTLE ROOF
 	loader.load( "models/islands/islands12.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			slate_material,
@@ -45204,11 +45204,11 @@ module.exports = function (scene, Physijs, loader, listener) {
 		mesh.receiveShadow = true;
 		scene.add(mesh);
 
-	});	
+	});
 
 	// FOREGROUND CONES, ISLAND 1
 	loader.load( "models/islands/islands07.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45221,7 +45221,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// ISLAND 1 CONES
  	loader.load( "models/islands/islands08.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45234,7 +45234,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// ISLAND 2 CONES RIGHT
  	loader.load( "models/islands/islands09.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45247,7 +45247,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
 	// ISLAND 2 CONES RIGHT
  	loader.load( "models/islands/islands10.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45260,7 +45260,7 @@ module.exports = function (scene, Physijs, loader, listener) {
 
  		// ISLAND 2 CONES RIGHT
  	loader.load( "models/islands/islands11.json", function( islands, islands_material ) {
-		
+
 		var mesh = new Physijs.ConvexMesh(
 			islands,
 			ground_material,
@@ -45297,7 +45297,7 @@ module.exports = function (scene) {
 	var light2 = new THREE.AmbientLight(0x444444);
 	scene.add(light2);
 	var light3 = new THREE.AmbientLight(0x444444);
-	scene.add(light3);	
+	scene.add(light3);
 
 	return light;
 
@@ -45341,7 +45341,7 @@ module.exports = function (scene) {
     } );
 
     mesh = new THREE.Mesh( new THREE.BoxGeometry( 1000, 1000, 1000 ), material );
-    
+
     scene.add(mesh);
 
     return mesh;
