@@ -1,0 +1,60 @@
+html {
+
+}
+body {
+  background-color:#000;
+  font-family:Courier;
+  font-size: 12pt;
+}
+main {
+  color:#aaa;
+  margin: 0 auto;
+  max-width: 700px;
+}
+a {
+  color:#fff;
+  text-decoration: none;
+}
+a:hover {
+  color:#aaa;
+}
+a.nav {
+  margin: 10 10 10 10;
+}
+h1 {
+  font-size:24pt;
+  color:#fff;
+  margin:10;
+  text-align: center;
+}
+h2 {
+  font-size:16pt;
+  color:#fff;
+  margin: 10 0 10 0;
+}
+h3 {
+  font-size:16pt;
+  color:#fff;
+  margin: 10 0 -15 0;
+}
+li {
+  font-size:12pt;
+  margin: 0 0 0 0;
+}
+header {
+  text-align: center;
+  margin: 0 0 30 0;
+}
+footer {
+  text-align: center;
+}
+img.oldsite {
+  max-width: 500;
+}
+div.blogpost {
+  border-style: solid;
+  border-width: thin;
+  border-color: #fff;
+  padding: 0 10 0 10;
+  margin: 0 0 20 0;
+}
