@@ -7,9 +7,9 @@ html {
     width: 100%;
   }
 }
-@media(prefers-color-scheme:dark){div.nav{background-color:#000;}main{background-color:#000;color:#fff;}a{color:#fff;}div.blogpost{border-color:#fff}}
-@media(prefers-color-scheme:light){div.nav{background-color:#fff;}main{background-color:#fff;color:#000;}a{color:#000;}div.blogpost{border-color:#000}}
-@media(prefers-color-scheme:no-preference){div.nav{background-color:#fff;}main{background-color:#fff;color:#000;}a{color:#000;}div.blogpost{border-color:#000}}
+@media(prefers-color-scheme:dark){div.nav{background-color:#000;}body{background-color:#000;color:#fff}footer{background-color:#000;color:#fff}a{color:#fff;}div.blogpost{border-color:#fff}}
+@media(prefers-color-scheme:light){div.nav{background-color:#fff;}body{background-color:#fff;color:#000;}a{color:#000;}div.blogpost{border-color:#000}}
+@media(prefers-color-scheme:no-preference){div.nav{background-color:#fff;}body{background-color:#fff;color:#000;}a{color:#000;}div.blogpost{border-color:#000}}
 body {
   font-family: Garamond;
   font-size: 12pt;
@@ -93,7 +93,7 @@ img.work {
   max-width:100%;
 }
 #homebanner {
-  margin: 10 0 0 0;
+  margin: 5% 0 0 0;
   max-width: 500px;
 }
 #copyright {
