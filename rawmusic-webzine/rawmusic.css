@@ -1,0 +1,60 @@
+html {
+  font-size:16pt;
+  font-family:Lucida Console;
+}
+@media screen and (max-width: 760px) {
+  body {
+    display:block;
+    width: 100%;
+    font-size:14pt;
+  }
+}
+body {
+  margin:0 auto;
+  max-width:100%;
+  box-sizing:border-box;
+  background-color:white;
+  text-align:center;
+}
+h1 {
+  font-size:3em;
+  margin:2;
+}
+nav {
+  padding-top:1em;
+  padding-bottom:1em;
+  font-size:1em;
+}
+img {
+  max-width:300px;
+  border:2px solid black;
+}
+audio {
+  width:300px;
+  height:30px;
+}
+figure {
+  margin:.5em;
+}
+figcaption {
+  margin:1em auto;
+  font-size:.75em;
+  max-width:300px;
+}
+.wave {
+  height:60px;
+  width:300px;
+  border:none;
+}
+.cover {
+  margin:1em auto;
+  max-width:350px;
+}
+ol {
+  margin:0 auto;
+  max-width:350px;
+  text-align: left;
+  padding:10;
+  font-size: 1em;
+  list-style-position: inside;
+}
