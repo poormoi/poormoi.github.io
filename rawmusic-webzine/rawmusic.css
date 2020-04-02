@@ -1,6 +1,6 @@
 html {
   font-size:16pt;
-  font-family:Lucida Console;
+  font-family:sans-serif;
 }
 @media screen and (max-width: 760px) {
   body {
@@ -48,7 +48,7 @@ figcaption {
 }
 .cover {
   margin:1em auto;
-  max-width:350px;
+  max-width:325px;
 }
 ol {
   margin:0 auto;
