@@ -1,0 +1,45 @@
+html {
+  width:100%;
+}
+body {
+  margin: 0 auto;
+  font-family:courier new,monospace,serif;
+  font-size: 1em;
+  color: #fff;
+  background-color: #60e;
+}
+main {
+  margin: 0 auto;
+}
+header {
+  margin: 0 auto;
+  background-color: #00f;
+  text-align: center;
+  padding: 10px;
+  height: 40px;
+}
+div {
+  margin: 0 auto;
+  padding: 10px;
+}
+#nav {
+  background-color: #f00;
+  width: 100px;
+  top: 60px;
+  position:fixed;
+}
+.content {
+  background-color: #0f0;
+  padding: 10px;
+  float:left;
+  position:absolute;
+  left:100px;
+  color: #000;
+}
+footer {
+  margin: 0 auto;
+  background-color: #404;
+  padding: 10px;
+  float:left;
+  text-align: center;
+}
