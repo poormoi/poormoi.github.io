@@ -1,55 +1,53 @@
 html {
+  margin: 0 auto;
   width: 100%;
-  font-size: 14pt;
+  font-size: 9pt;
+  font-family: Menlo,monospace,serif;
 }
 body {
   margin: 0 auto;
-  font-family:garamond,serif;
-  font-size: 1em;
 }
 #nav {
-  margin: 0 auto;
-  float:left;
-  position: fixed;
-  padding-left: 1em;
-  font-size: 12pt;
-  font-family:courier new,monospace;
-  white-space: pre-line;
+  top: 20px;
+  position: absolute;
+  width: 200px;
+  text-align: center;
 }
 #main {
-  margin: 1em auto;
   position: absolute;
-  left: 150px;
-  width: 600px;
+  top: 20px;
+  left: 200px;
+  right: 200px;
+  float: left;
   text-align: left;
+}
+img.nav {
+  width: 25px;
+  padding-top: 5px;
 }
 .justify {
   text-align: justify;
 }
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   text-decoration: none;
 }
-a.nav {
-  text-decoration: none;
-}
 h1 {
-  margin: 0 auto;
-  font-size:2.5em;
+  margin: 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
 h2 {
-  margin: 0 auto;
-  font-size:1.5em;
+  margin: 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
 }
 ul {
   list-style-type: none;
   list-style-position: outside;
   padding-inline-start: 0px;
-}
-li {
-  margin: 0 0 10px 0;
 }
 .italics {
   font-style: italic;
@@ -59,7 +57,6 @@ li {
 }
 img {
   max-width: 100%;
-  padding: 10px 0 10px 0;
 }
 img.review {
   width: 300px;
@@ -67,26 +64,23 @@ img.review {
   padding: 10px 0 0 10px;
 }
 #copyright {
-  font-size: .8em;
-}
-hr {
-  border: .5px solid;
+  font-size: 1em;
 }
 @media(prefers-color-scheme:dark){
-  body {background-color: #202020; color: #E2E2E2}
-  a {color: #fff;}
-  a:hover {background-color: #648381;}
+  body {background-color: #282c33; color: #d6d9de}
+  a {color: #67a9cf;}
+  a:hover {color: #5c95b5;}
   hr {border-color: #E2E2E2;}
 }
 @media(prefers-color-scheme:light){
-  body {background-color: #ABE3DF; color: #000;}
+  body {background-color: #fff; color: #000;}
   a {color: #177DB8;}
-  a:hover {background-color: #fff;}
+  a:hover {color: #0e496b;}
   hr {border-color: #000;}
 }
 @media(prefers-color-scheme:no-preference){
-  body {background-color: #ABE3DF; color: #000;}
+  body {background-color: #fff; color: #000;}
   a {color: #177DB8;}
-  a:hover {background-color: #fff;}
+  a:hover {color: #0e496b;}
   hr {border-color: #000;}
 }
