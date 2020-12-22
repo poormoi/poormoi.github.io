@@ -1,8 +1,8 @@
 html {
   margin: 0 auto;
   width: 100%;
-  font-size: 9pt;
-  font-family: Menlo,monospace,serif;
+  font-size: 12pt;
+  font-family: Avenir,sans-serif;
 }
 body {
   margin: 0 auto;
@@ -12,9 +12,11 @@ body {
   position: absolute;
   width: 200px;
   text-align: center;
+  position: fixed;
 }
 #main {
   position: absolute;
+  max-width: 715px;
   top: 20px;
   left: 200px;
   right: 200px;
@@ -37,17 +39,32 @@ a:hover {
 h1 {
   margin: 0;
   font-size: 1.5em;
-  text-transform: uppercase;
 }
 h2 {
   margin: 0;
   font-size: 1.2em;
-  text-transform: uppercase;
+}
+h3 {
+  margin: 0;
+  font-size: 1em;
 }
 ul {
   list-style-type: none;
   list-style-position: outside;
   padding-inline-start: 0px;
+}
+.music {
+  display: inline;
+  height: 300px;
+  margin: 0 20px 0 0;
+}
+iframe.bandcamp {
+  width: 160px;
+  height: 160px;
+}
+iframe.youtube {
+  width: 715px;
+  height: 402px;
 }
 .italics {
   font-style: italic;
@@ -64,7 +81,7 @@ img.review {
   padding: 10px 0 0 10px;
 }
 #copyright {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 @media(prefers-color-scheme:dark){
   body {background-color: #282c33; color: #d6d9de}
